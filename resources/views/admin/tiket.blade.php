@@ -104,7 +104,8 @@
 					<tr>
 						<th>Id</th>
                         <th>Id Objek</th>
-						<th>Tanggal</th>
+						<th>Bulan</th>
+						<th>Tahun</th>
 						<th>Jumlah</th>
 						<th>Aksi</th>
 					</tr>
@@ -112,7 +113,8 @@
                 	<tr>
 						<td>{{ $p->id }}</td>
                         <td>{{ $p->id_objek }}</td>
-						<td>{{ $p->tanggal }}</td>
+						<td>{{ $p->bulan }}</td>
+						<td>{{ $p->tahun }}</td>
 						<td>{{ $p->jumlah }}</td>
 						<td>
                             <a href="/tiket/edit/{{ $p->id }}" class="btn btn-primary" role="button" title="edit"><i class="glyphicon glyphicon-plus"></i>Edit</a>

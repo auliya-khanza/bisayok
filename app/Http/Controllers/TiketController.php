@@ -12,10 +12,10 @@ class TiketController extends Controller
     public function index(){
 		//MENGAMBIL DATA DARI TABLE PEMASUKAN 
 		// $objek = objeks::all();
-    	$tiket = DB:: table('tiket')->get();
+    	$tiket = DB:: table('tikets')->get();
 
     	//MENGAMBIL DATA PEMASUKAN KE VIEW 
-    	return view('admin/tiket',['tiket' => $tiket]);
+    	return view('admin/tiket',['tikets' => $tiket]);
 	}
 
 	public function tambah(){
@@ -25,13 +25,14 @@ class TiketController extends Controller
 
 	public function submit(Request $request)
 	{
-		$pemasukan = DB::table('tiket')->get();
+		$pemasukan = DB::table('tikets')->get();
 
 	// insert data ke table pegawai
-	DB::table('tiket')->insert([
+	DB::table('tikets')->insert([
         'id' => $request->id,
         'id_objek' => $request->id_objek,
-		'tanggal' => $request->tanggal,
+		'bulan' => $request->bulan,
+		'tahun' => $request->tahun,
 		'jumlah' => $request->jumlah,
 	]);
 
@@ -41,19 +42,20 @@ class TiketController extends Controller
 	public function edit($id)
 	{
 	// mengambil data pemasukan berdasarkan id yang dipilih
-	$objek = DB::table('tiket')->where('id',$id)->get();
+	$objek = DB::table('tikets')->where('id',$id)->get();
 	// passing data pemasukan yang didapat ke view edit.blade.php
-	return view('admin/tiket_edit',['tiket' => $tiket]);
+	return view('admin/tiket_edit',['tikets' => $tiket]);
 
 	}
 
 	public function update(Request $request)
 	{
 	// insert data ke table pemasukan
-	DB::table('tiket')->where('id',$request->id)->update([
+	DB::table('tikets')->where('id',$request->id)->update([
         'id' => $request->id,
         'id_objek' => $request->id_objek,
-		'tanggal' => $request->tanggal,
+		'bulan' => $request->bulan,
+		'tahun' => $request->tahun,
 		'jumlah' => $request->jumlah,
 	]);
 	return redirect('/admin/tiket');
@@ -63,7 +65,7 @@ class TiketController extends Controller
 	public function hapus($id)
 	{
 	// menghapus data objek wisata berdasarkan id yang dipilih
-	DB::table('tiket')->where('id',$id)->delete();
+	DB::table('tikets')->where('id',$id)->delete();
 
 	return redirect('/admin/tiket');
 	}

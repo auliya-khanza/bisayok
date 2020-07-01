@@ -101,20 +101,26 @@
 		{{ csrf_field() }}
 		<table>
 			<tr>
-				<td>Tanggal</td>
+				<td>Id Objek</td>
 				<td>:</td>
-				<td> <input type="text" name="tanggal" required="required"> </td>
+				<td><input type="text" name="id_objek" required="required"></textarea> </td>
+			</tr>
+			<tr>
+				<td>Bulan</td>
+				<td>:</td>
+				<td> <input type="text" name="bulan" required="required"> </td>
+			</tr>
+			<tr>
+				<td>Tahun</td>
+				<td>:</td>
+				<td> <input type="text" name="tahun" required="required"> </td>
 			</tr>
 			<tr>
 				<td>Jumlah</td>
 				<td>:</td>
 				<td><input type="text" name="jumlah" required="required"></textarea> </td>
 			</tr>
-            <tr>
-				<td>Id Objek</td>
-				<td>:</td>
-				<td><input type="text" name="id_objek" required="required"></textarea> </td>
-			</tr>
+            
 			<tr>
 				<td colspan="3"><input type="submit" value="Simpan Data"></td>
 			</tr>

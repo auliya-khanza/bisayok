@@ -103,20 +103,26 @@
 				<td><input type="hidden" required="required" name="id" value="{{ $p->id }}"> </td>
 			</tr>
 			<tr>
-				<td>Tanggal</td>
+				<td>Id Objek</td>
 				<td>:</td>
-				<td> <input type="text" name="tanggal" required="required" value="{{ $p->tanggal }}"> </td>
+				<td><input type="text" name="id_objek" required="required" value="{{ $p->id_objek }}"> </td>
+			</tr>
+			<tr>
+				<td>Bulan</td>
+				<td>:</td>
+				<td> <input type="text" name="bulan" required="required" value="{{ $p->bulan }}"> </td>
+			</tr>
+			<tr>
+				<td>Tahun</td>
+				<td>:</td>
+				<td> <input type="text" name="tahun" required="required" value="{{ $p->tahun }}"> </td>
 			</tr>
 			<tr>
 				<td>Jumlah</td>
 				<td>:</td>
 				<td><input type="text" name="Alamat" required="required" value="{{ $p->jumlah }}"> </td>
 			</tr>
-            <tr>
-				<td>Id Objek</td>
-				<td>:</td>
-				<td><input type="text" name="id_objek" required="required" value="{{ $p->id_objek }}"> </td>
-			</tr>
+            
 			<tr>
 				<td colspan="3"><input type="submit" value="Simpan Data"></td>
 			</tr>
