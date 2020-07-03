@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Dashboard Admin - Edit Obyek Wisata</title>
+		<title>Dashboard Admin</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--CSS============================================= -->
@@ -33,7 +33,7 @@
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-dark">
 						<div class="container">
-						<a class="navbar-brand" href="/admin">
+							  <a class="navbar-brand" href="/">
 								  <img src="/img/logo_.png" alt="">
 							  </a>
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,6 @@
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-									<li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/admin/pemasukan')}}">Pemasukan</a></li>
-									<li><a href="{{url('/admin/tiket')}}">Tiket</a></li>
-									<li><a href="{{url('/admin/statistik')}}">Statistik</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -87,71 +83,52 @@
 			<!-- End banner Area -->				
 			</section>
 
-		<body>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+			<body>
+			<br>
+			<br>
+				<div class="container">	
+							
+				<br>
+				
+				<div class="box-header">
+          			<a href="/objek_wisata/tambah" class="btn btn-primary" role="button" title="Tambah Data"><i class="glyphicon glyphicon-plus"></i> Tambah</a>
+          			</div>
+				<br/>
 
-		@foreach($objek as $p)
-
-		<form action="/objek_wisata/update" method="post">
-		{{ csrf_field() }}
-		<table>
-			<tr>
-				<td><input type="hidden" required="required" name="id_objek" value="{{ $p->id_objek }}"> </td>
-			</tr>
-			<tr>
-				<td>Nama Objek</td>
-				<td>:</td>
-				<td> <input type="text" name="nama_objek" required="required" value="{{ $p->nama_objek }}"> </td>
-			</tr>
-			<tr>
-				<td>Alamat</td>
-				<td>:</td>
-				<td><input type="text" name="Alamat" required="required" value="{{ $p->Alamat }}"> </td>
-			</tr>
-			<tr>
-				<td>Deskripsi</td>
-				<td>:</td>
-				<td><input type="text" name="deskripsi" required="required" value="{{ $p->deskripsi }}"> </td>
-			</tr>
-			<tr>
-				<td>Jam Operasional</td>
-				<td>:</td>
-				<td><input type="text" name="jam_operasional" required="required" value="{{ $p->jam_operasional }}">< </td>
-			</tr>
-
-			<tr>
-				<td>Harga tiket</td>
-				<td>:</td>
-				<td><input type="text" name="harga_tiket" required="required" value="{{ $p->harga_tiket }}"></textarea> </td>
-			</tr>
-			
-			<tr>
-				<td colspan="3"><input type="submit" value="Simpan Data"></td>
-			</tr>
-
-			
-		</table>
+				<table class="table table-bordered">
+					<tr>
+						<th>Id Objek</th>
+						<th>Nama Objek</th>
+						<th>Alamat</th>
+						<th>Jam Operasional</th>
+						<th>Aksi</th>
+					</tr>
+					@foreach($objek as $p)
+                	<tr>
+						<td>{{ $p->id_objek }}</td>
+						<td>{{ $p->nama_objek }}</td>
+						<td>{{ $p->Alamat }}</td>
+						<td>{{ $p->jam_operasional }}</td>
+						<td>
+                            <a href="/objek_wisata/edit/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="edit"><i class="glyphicon glyphicon-plus"></i>Edit</a>
+                            <a href="/objek_wisata/hapus/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="Tambah Data"><i class="glyphicon glyphicon-plus"></i>Hapus</a>
+                            <a href="/objek_wisata/lihat/{{ $p->id_objek }}" class="btn btn-primary" role="button" title="Lihat Data"><i class="glyphicon glyphicon-plus"></i>Lihat</a>
+						</td>
+                    </td>    
+                </tr> 
+                @endforeach
+				</table>
+			</div>
 		
-	</form>
-	@endforeach
-
-	<br>
-	<br>
-	<br>
-	<br>
-	<!-- start footer Area -->		
-	<footer class="footer-area section-gap">
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5 col-md-6 col-sm-6">
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-									Annida Rizki | Auliya Khanza | Ba'Auliyaul Afifah | Maheswari Paramita
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c35fe1b30b9fb6dc7d25537afa439fa",
+    "content-hash": "fa503b104f700e4337a4bf209a56bc8a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -420,7 +420,6 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
-            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -467,7 +466,6 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
-            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {
@@ -2966,68 +2964,6 @@
                 "environment"
             ],
             "time": "2019-09-10T21:37:39+00:00"
-        },
-        {
-            "name": "willvincent/laravel-rateable",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/willvincent/laravel-rateable.git",
-                "reference": "a560a57777dc16ded20596cb74b3af22f5d32df2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/willvincent/laravel-rateable/zipball/a560a57777dc16ded20596cb74b3af22f5d32df2",
-                "reference": "a560a57777dc16ded20596cb74b3af22f5d32df2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "^6.0|^7.0",
-                "illuminate/support": "^6.0|^7.0",
-                "php": ">=7.2"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "orchestra/testbench": "^5.0",
-                "phpunit/phpunit": "^9.0",
-                "psalm/plugin-laravel": "^1.2",
-                "vimeo/psalm": "^3.11"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "willvincent\\Rateable\\RateableServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "willvincent\\Rateable\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Will Vincent",
-                    "email": "tcindie@gmail.com",
-                    "homepage": "https://willvincent.com"
-                }
-            ],
-            "description": "Allows multiple models to be rated with a fivestar like system.",
-            "homepage": "https://github.com/willvincent/laravel-rateable",
-            "keywords": [
-                "Rating",
-                "fivestar",
-                "laravel",
-                "laravel 7",
-                "rateable",
-                "vote"
-            ],
-            "time": "2020-06-18T22:21:15+00:00"
         }
     ],
     "packages-dev": [

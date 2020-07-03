@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Dashboard Admin - Tambah Data</title>
+		<title>Dashboard Admin - Lihat Obyek Wisata</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--CSS============================================= -->
@@ -33,9 +33,7 @@
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-dark">
 						<div class="container">
-							  <a class="navbar-brand" href="/admin">
-								  <img src="/img/logo_.png" alt="">
-							  </a>
+							  
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							    <span class="text-black lnr lnr-menu"></span>
 							  </button>
@@ -43,10 +41,6 @@
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-                                    <li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/admin/pemasukan')}}">Pemasukan</a></li>
-									<li><a href="{{url('/admin/tiket')}}">Tiket</a></li>
-									<li><a href="{{url('/admin/statistik')}}">Statistik</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -73,55 +67,39 @@
 						</div>
 					</nav>
 				</header>
-				<!-- End Header Area -->
-				<div class="container">
-					<div class="row height align-items-center justify-content-center">
-						<div class="col-lg-10">
-							<div class="generic-banner-content">
-								<h2 class="text-white">Obyek Wisata</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>		
-			<!-- End banner Area -->				
-			</section>
+			<<body>
+			<div class="jumbotron jumbotron-fluid">
+			@foreach($objek as $p)
+			<div class="container">
+				<h1 class="display-4">{{ $p->nama_objek }}</h1>
+			</div>
+			</div>
+			<div class="container">
+                <br><br>
+				
+                <h4>Deskripsi</h4><br>
+                <p>{{ $p->deskripsi }}</p>
+                <br><br>
 
-			<body>
+                <h4>Alamat</h4><br>
+                <p>{{ $p->Alamat }}</p>
+                <br><br>
 
-			<br>
-			<br>
+                <h4>Jam Operasional</h4><br>
+                <p>{{ $p->jam_operasional }}</p>
+                <br><br>
 
-			<h3 >Tambah Data</h3>
 
-	<a href="/admin/pemasukan"> Kembali</a>
-	
+                <h4>Foto</h4><br>
+                <p><img src="{{url('/data_file/'.$p->image)}}"></p>
+                <br><br>
 
-	<form action="{{ url('/objek_wisata/submit') }}" method="post" enctype="multipart/form-data">
-		{{ csrf_field() }}
-		<table>
-			<tr>
-				<td>Bulan</td>
-				<td>:</td>
-				<td> <input type="text" name="bulan" required="required"> </td>
-			</tr>
-            <tr>
-				<td>Tahun</td>
-				<td>:</td>
-				<td> <input type="text" name="tahun" required="required"> </td>
-			</tr>
-			<tr>
-				<td>Jumlah</td>
-				<td>:</td>
-				<td><input type="text" name="jumlah" required="required"></textarea> </td>
-			</tr>
-			<tr>
-				<td colspan="3"><input type="submit" value="Simpan Data"></td>
-			</tr>
-		</table>
-	</form>
+            </div>
+            @endforeach
 
-			<!-- start footer Area -->		
+			<a href="/admin/objek_wisata"> Kembali</a>
+
+		<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
@@ -129,7 +107,7 @@
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-                                Annida Rizki | Auliya Khanza | Ba'Auliyaul Afifah | Maheswari Paramita
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
@@ -192,5 +170,4 @@
 			<script src="/js/waypoints.min.js"></script>		
 			<script src="/js/main.js"></script>	
 	</body>
-</html>
-
+</html>	

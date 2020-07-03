@@ -41,7 +41,7 @@ class LoginUser extends Controller
             if($user->is_admin())
     
             {
-                return view('/admin/dashboard');
+                return redirect('/admin/objek_wisata');
             }
                 return redirect('/');
         }

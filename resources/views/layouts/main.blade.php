@@ -25,14 +25,13 @@
 			<link rel="stylesheet" href="/css/animate.min.css">
 			<link rel="stylesheet" href="/css/owl.carousel.css">
 			<link rel="stylesheet" href="/css/main.css">
-			
 		</head>
 		<body>
 			<!-- start banner Area -->
 			<section class="banner-area" id="home">
 				<!-- Start Header Area -->
 				<header class="default-header">
-					<nav class="navbar navbar-expand-lg navbar-light">
+					<nav class="navbar navbar-expand-lg  navbar-light">
 						<div class="container">
 							  <a class="navbar-brand" href="/">
 								  <img src="/img/logo_.png" alt="">
@@ -44,9 +43,8 @@
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-									<li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/admin/pemasukan')}}">Pemasukan</a></li>
-									<li><a href="{{url('/admin/tiket')}}">Tiket</a></li>
+									<li><a href="/">Tentang</a></li>									
+									<li><a href="{{url('/user/objek_wisata')}}">Obyek Wisata</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -62,7 +60,7 @@
                                         Pengguna
 										</a>
 										<div class="dropdown-menu">
-										  <a class="dropdown-item" href="{{url('register')}}">Sign Up</a>
+										  <a class="dropdown-item" href="{{url('register')}}">Daftar</a>
                                           <a class="dropdown-item" href="{{url('login')}}">Login</a>
 										</div>
 									  </li>
@@ -73,16 +71,10 @@
 						</div>
 					</nav>
 				</header>
-				<!-- End Header Area -->
-
+				<!-- End Header Area -->				
 			</section>
-			@yield('container')
-            <!-- start footer Area -->	
-
-			<br>
-			<br>
-			<br>
-			<br>	
+            @yield('container')
+            <!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
@@ -90,7 +82,7 @@
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-									Annida Rizki | Auliya Khanza | Ba'auliyaul Afifah | Maheswari Paramita
+									Auliya Khanza | Ilma Khoiruzzidan | Farah Dila A. | Fitrah Ramadhansyah
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
@@ -152,7 +144,5 @@
 			<script src="/js/jquery.counterup.min.js"></script>
 			<script src="/js/waypoints.min.js"></script>		
 			<script src="/js/main.js"></script>	
-			<!-- rating --> 
-			
 	</body>
 </html>

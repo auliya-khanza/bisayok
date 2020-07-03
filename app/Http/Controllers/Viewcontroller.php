@@ -15,7 +15,7 @@ class Viewcontroller extends Controller
     	$objek = DB:: table('objek')->get();
 
     	//MENGAMBIL DATA BARANG KE VIEW 
-    	return view('admin/obyek',['objek' => $objek]);
+    	return view('dashboard_admin',['objek' => $objek]);
 	
 	}
 
@@ -25,12 +25,12 @@ class Viewcontroller extends Controller
     	$objek = DB:: table('objek')->get();
 
     	//MENGAMBIL DATA BARANG KE VIEW 
-    	return view('user/obyek',['objek' => $objek]);
+    	return view('dashboard_user',['objek' => $objek]);
 	
 	}
 
 	public function tambah(){
-		return view('admin/obyek_tambah');
+		return view('tambah');
 	}
 
 
@@ -56,8 +56,9 @@ class Viewcontroller extends Controller
 		'Alamat' => $request->Alamat,
 		'deskripsi' => $request->deskripsi,
 		'jam_operasional' => $request->jam_operasional,
-		'harga_tiket' => $request->harga_tiket,
 		'image' => $nama_file
+			
+		
 	]);
 
 	return redirect('/admin/objek_wisata');
@@ -70,7 +71,7 @@ class Viewcontroller extends Controller
 	// mengambil data objek berdasarkan id yang dipilih
 	$objek = DB::table('objek')->where('id_objek',$id)->get();
 	// passing data pegawai yang didapat ke view edit.blade.php
-	return view('admin/obyek_edit',['objek' => $objek]);
+	return view('edit',['objek' => $objek]);
 
 	}
 
@@ -83,7 +84,7 @@ class Viewcontroller extends Controller
 		'Alamat' => $request->Alamat,
 		'deskripsi' => $request->deskripsi,
 		'jam_operasional' => $request->jam_operasional,
-		'harga_tiket' => $request->harga_tiket,
+		
 
 	]);
 	return redirect('/admin/objek_wisata');
@@ -98,39 +99,33 @@ class Viewcontroller extends Controller
 	return redirect('/admin/objek_wisata');
 	}
 
-	public function lihatAdmin($id)
+	public function lihat($id)
 	{
 		$objek = DB::table('objek')->where('id_objek',$id)->get();
-		return view('admin/obyek_lihat',['objek' => $objek]);
+		return view('lihat',['objek' => $objek]);
 
 	}
 
 	public function lihatUser($id)
 	{
 		$objek = DB::table('objek')->where('id_objek',$id)->get();
-		return view('user/obyek_lihat',['objek' => $objek]);
+		return view('lihat_user',['objek' => $objek]);
 
 	}
 
-	public function lihatDetailTiket($id)
+	public function cari(Request $request)
 	{
-		$objek = DB::table('objek')->where('id_objek',$id)->get();
-		return view('user/lihat_detail_tiket',['objek' => $objek]);
-
+		// menangkap data pencarian
+		$cari = $request->cari;
+ 
+    		// mengambil data dari table pegawai sesuai pencarian data
+		$pegawai = DB::table('objek_wisata')
+		->where('nama_objek','like',"%".$cari."%")
+		->paginate();
+ 
+    		// mengirim data pegawai ke view index
+		return view('index',['objek' => $objek]);
+ 
 	}
-	// public function cari(Request $request)
-	// {
-	// 	// menangkap data pencarian
-	// 	$cari = $request->cari;
- 
-    // 		// mengambil data dari table pegawai sesuai pencarian data
-	// 	$pegawai = DB::table('objek_wisata')
-	// 	->where('nama_objek','like',"%".$cari."%")
-	// 	->paginate();
- 
-    // 		// mengirim data pegawai ke view index
-	// 	return view('index',['objek' => $objek]);
- 
-	// }
 
 }

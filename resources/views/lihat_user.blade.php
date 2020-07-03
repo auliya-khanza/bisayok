@@ -12,10 +12,7 @@
 			</div>
 			<div class="container">
                 <br><br>
-                
-                <p><img src="{{url('/data_file/'.$p->image)}}" width="500px" height="500px"></p>
-                <br><br>
-
+				
                 <h4>Deskripsi</h4><br>
                 <p>{{ $p->deskripsi }}</p>
                 <br><br>
@@ -28,8 +25,9 @@
                 <p>{{ $p->jam_operasional }}</p>
                 <br><br>
 
-                <h4>Harga tiket</h4><br>
-                <p>{{ $p->harga_tiket }}</p>
+
+                <h4>Foto</h4><br>
+                <p><img src="{{url('/data_file/'.$p->image)}}"></p>
                 <br><br>
 
             </div>

@@ -38,7 +38,6 @@
 				</div>
 			</section>		
 			<!-- End banner Area -->
-
 			<div class="container">	
 								
 				<br>

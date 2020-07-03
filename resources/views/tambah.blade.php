@@ -14,7 +14,7 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Dashboard Admin - Edit Data</title>
+		<title>Dashboard Admin - Tambah Obyek Wisata</title>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--CSS============================================= -->
@@ -33,7 +33,7 @@
 				<header class="default-header">
 					<nav class="navbar navbar-expand-lg  navbar-dark">
 						<div class="container">
-						<a class="navbar-brand" href="/admin">
+							  <a class="navbar-brand" href="/admin/objek_wisata">
 								  <img src="/img/logo_.png" alt="">
 							  </a>
 							  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -43,10 +43,6 @@
 							  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 							    <ul class="navbar-nav">
 									
-                                    <li><a href="{{url('/admin/objek_wisata')}}">Obyek Wisata</a></li>
-									<li><a href="{{url('/admin/pemasukan')}}">Pemasukan</a></li>
-									<li><a href="{{url('/admin/tiket')}}">Tiket</a></li>
-									<li><a href="{{url('/admin/statistik')}}">Statistik</a></li>
 									<!-- Dropdown -->
 								    <li class="dropdown">
 										
@@ -78,7 +74,7 @@
 					<div class="row height align-items-center justify-content-center">
 						<div class="col-lg-10">
 							<div class="generic-banner-content">
-								<h2 class="text-white">Rekapitulasi Pemasukan</h2>
+								<h2 class="text-white">Obyek Wisata</h2>
 							</div>
 						</div>
 					</div>
@@ -87,59 +83,59 @@
 			<!-- End banner Area -->				
 			</section>
 
-		<body>
-		<br>
-		<br>
-		<br>
-		<br>
-		<br>
+			<body>
 
-		@foreach($pemasukan as $p)
+			<br>
+			<br>
 
-		<form action="/pemasukan/update" method="post">
+			<h3 >Tambah Barang</h3>
+
+	<a href="/admin/objek_wisata"> Kembali</a>
+	
+
+	<form action="{{ url('/objek_wisata/submit') }}" method="post" enctype="multipart/form-data">
 		{{ csrf_field() }}
 		<table>
 			<tr>
-				<td><input type="hidden" required="required" name="id" value="{{ $p->id }}"> </td>
+				<td>Nama Objek</td>
+				<td>:</td>
+				<td> <input type="text" name="nama_objek" required="required"> </td>
 			</tr>
 			<tr>
-				<td>Bulan</td>
+				<td>Alamat</td>
 				<td>:</td>
-				<td> <input type="text" name="bulan" required="required" value="{{ $p->bulan }}"> </td>
-			</tr>
-            <tr>
-				<td>Tahun</td>
-				<td>:</td>
-				<td> <input type="text" name="tahun" required="required" value="{{ $p->tahun }}"> </td>
+				<td><input type="text" name="Alamat" required="required"></textarea> </td>
 			</tr>
 			<tr>
-				<td>Jumlah</td>
+				<td>Deskripsi</td>
 				<td>:</td>
-				<td><input type="text" name="jumlah" required="required" value="{{ $p->jumlah }}"> </td>
+				<td><textarea name="deskripsi" value="-"></textarea> </td>
 			</tr>
-
+			<tr>
+				<td>Jam Operasional</td>
+				<td>:</td>
+				<td><input type="text" name="jam_operasional" required="required"></textarea> </td>
+			</tr>
+			<tr>
+				<td>Upload gambar</td>
+				<td>:</td>
+				<td><input type="file" name="image" ></input> </td>
+			</tr>
 			<tr>
 				<td colspan="3"><input type="submit" value="Simpan Data"></td>
 			</tr>
-			
 		</table>
-		
 	</form>
-	@endforeach
 
-	<br>
-	<br>
-	<br>
-	<br>
-	<!-- start footer Area -->		
-	<footer class="footer-area section-gap">
+			<!-- start footer Area -->		
+			<footer class="footer-area section-gap">
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-5 col-md-6 col-sm-6">
 							<div class="single-footer-widget">
 								<h6>About Us</h6>
 								<p>
-                                Annida Rizki | Auliya Khanza | Ba'Auliyaul Afifah | Maheswari Paramita
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.
 								</p>
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             		<p class="footer-text">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
@@ -203,3 +199,4 @@
 			<script src="/js/main.js"></script>	
 	</body>
 </html>
+
